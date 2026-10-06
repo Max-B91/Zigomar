@@ -1,3 +1,11 @@
+"""
+Rétroaction :
+Cet exercice demandait aussi de faire un plan de tests.
+Logique algorithmique :                 3/5 (aucune fonctions, pas toujours conforme à l'histoire, voir commentaires)
+Fonctionnement du programme python :    5/5
+Documentation :                         2/2
+Total :                                 10/12
+"""
 import random
 
 mains = ["potions scintillantes", "clés mystérieuses", "boules brillantes", "squelettes miniatures"]
@@ -7,22 +15,22 @@ sac = []
 sac.extend(mains)
 mains.clear()
 
-while True:
+while True: # À quoi sert cette boucle ?
     # Ramasser des objets
     while True:
         objet = input("Entrer ce que vous avez ramassé : ")
 
         if objet == "":
-            break
+            break   # en fait la boucle ne doit pas s'arrêter, car l'histoire se répète à chaque jour.
 
         mains.append(objet)
-        sac.extend(mains)
+        sac.extend(mains)   # sortir de la boucle
         mains.clear()
 
     # Choisir une méthode de triage
     choix = random.randint(1, 2)
 
-    if choix == 1:
+    if choix == 1:  # vérifier le nombre d'objets avant
         # Triage automatique avec la lettre "b" et les chiffres
         if len(sac) >= 15:
             for i in range(len(sac) - 1, -1, -1):
